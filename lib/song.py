@@ -9,11 +9,7 @@ class Song:
         self.artist=artist
         self.genre=genre
 
-        Song.add_songs_to_count()
-        Song.add_to_genres(self.genre)
-        Song.add_to_artists(self.artist)
-        Song.add_to_genre_count(self.genre)
-        Song.add_to_artists_count(self.artist)
+        
 
     @property
     def name(self):
@@ -56,17 +52,17 @@ class Song:
             cls.genres.append(genre)
 
     @classmethod
-    def add_to_artist(cls,artist):
+    def add_to_artists(cls,artist):
         if artist not in cls.artists:
             cls.artists.append(artist)
 
     @classmethod
-    def add_to_genre(cls,genre):
+    def add_to_genre_count(cls,genre):
         if genre not in cls.genres:
             cls.genre_count[genre]=cls.genre_count.get(genre,0)+1
 
     @classmethod
-    def add_to_artist(cls,artist):
+    def add_to_artist_count(cls,artist):
         if artist not in cls.artists_count:
             cls.artists_count[artist]=cls.artists_count.get(artist,0)+1
 
